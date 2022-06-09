@@ -7,12 +7,9 @@
 
 function validate_cred($username,$password)
 {
-    if ($username =="nithish@gmail.com" and $password=="password"){
-        return true;
-    }else{
-
-        return false;
-    }
+$query="SELECT * FROM `signin` where username='$username' and password='$password ";
+$result=true;
+print("hii");
 }
 
 
@@ -29,7 +26,6 @@ function signup($user, $phone, $pass, $email)
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
-
 
     $sql="INSERT INTO `signin` (`username`, `password`, `email`, `phone`)
 VALUES ('$user', '$pass', '$email', '$phone');";
