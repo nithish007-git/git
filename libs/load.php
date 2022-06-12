@@ -1,5 +1,8 @@
 <?php
- function load_template($name){
+include_once 'libs/includes/micclass.php';
+
+
+function load_template($name){
      include __DIR__." ./../_templates/$name.php";
 
  }

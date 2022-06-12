@@ -1,10 +1,9 @@
-<?php
-$servername = "mysql.selfmade.ninja";
-$username = "nithish";
-$password = "hackerfeast12";
-$dbname="nithish_photogram" ;
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-
-
-
+ <?php
+include_once 'libs/load.php' ;
+$mic1=new mic();
+$mic1->light="rd";
+echo $mic1->light."\n";
+echo $mic1->setlight("bluee");
+$mic1->name = 'red';
+echo $mic1->name."\n";
 ?>
