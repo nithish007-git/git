@@ -1,5 +1,6 @@
 <?php
-include_once 'libs/includes/micclass.php';
+include_once 'libs/includes/mic.class.php';
+include_once 'libs/includes/database.class.php';
 
 
 function load_template($name){
@@ -16,35 +17,17 @@ print("hii");
 }
 
 
-function signup($user, $phone, $pass, $email)
-{
-    $servername="mysql.selfmade.ninja";
-    $username="nithish";
-    $password="hackerfeast12";
-    $dbname="nithish_photogram";
+// function signup($user, $phone, $pass, $email)
+// {
+//   $conn=database::get_connection();
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
+//     $sql="INSERT INTO `signin` (`username`, `password`, `email`, `phone`)
+// VALUES ('$user', '$pass', '$email', '$phone');";
+// $result=false;
 
-
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
-    $sql="INSERT INTO `signin` (`username`, `password`, `email`, `phone`)
-VALUES ('$user', '$pass', '$email', '$phone');";
-$result=false;
-
-if ($conn->query($sql) === true) {
-  $result=true;
-  }
-else{
-    echo "error : " .$sql. $conn->error;
-
-  }
-
-  $conn->close();
-  return $result;
-}
+//   $conn->close();
+//   return $result;
+// }
 
 
 ?>
