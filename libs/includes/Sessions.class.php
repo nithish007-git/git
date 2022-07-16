@@ -1,0 +1,29 @@
+<?php
+
+class session{
+    public static function start(){
+        session_start();
+    }
+    public static function unset_all(){
+        session_unset();
+    }
+    public static function destroy(){
+        session_destroy();
+    }
+    public static function unset($key)
+    {
+        unset($_SESSION[$key]);
+    }
+    public static function isset($key){
+        return isset($_SESSION[$key]);
+    }
+    public static function get($key,$default){
+        if (session::isset($key)){
+            return $_SESSION[$key];
+        }else {
+            return $default;
+        }
+       
+    }
+}
+?>
