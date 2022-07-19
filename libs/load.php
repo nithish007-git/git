@@ -13,34 +13,34 @@ function load_template($name){
 
 
 function validate_cred($user,$pass)
-{
-$servername="mysql.selfmade.ninja";
-$username="nithish";
-$password="hackerfeast12";
-$dbname="nithish_photogram";
-    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-    $mysqli = new mysqli($servername, $username,$password, $dbname);
+ {
+// $servername="mysql.selfmade.ninja";
+// $username="nithish";
+// $password="hackerfeast12";
+// $dbname="nithish_photogram";
+//     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
+//     $mysqli = new mysqli($servername, $username,$password, $dbname);
     
-    $query = "SELECT username,password FROM signin";
+//     $query = "SELECT username,password FROM signin";
     
-    $result = $mysqli->query($query);
+//     $result = $mysqli->query($query);
     
-    /* fetch object array */
-    while ($row = $result->fetch_row()) {
-       if($row[1]==md5($pass)){
-          if($row[0]==$user)
-          {
+//     /* fetch object array */
+//     while ($row = $result->fetch_row()) {
+//        if($row[1]==md5($pass)){
+//           if($row[0]==$user)
+//           {
         
-            return $result=true;
-          }
+//             return $result=true;
+//           }
     
-       }
-       printf("%d",$user);
+//        }
+//        printf("%d",$user);
     
     
     }
     
-}
+
 
 
 // function signup($user, $phone, $pass, $email)

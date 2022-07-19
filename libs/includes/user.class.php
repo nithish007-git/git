@@ -2,9 +2,7 @@
 class user1{
     public static function signup($user, $phone, $pass, $email)
     {
-        $pass=md5($pass);
-        echo $pass;
-        echo $email;
+        $pass=md5(md5(strrev($pass)));
         $conn=database::get_connection();
 
         $sql = "INSERT INTO `signin` (`username`, `email`, `password`, `phone`)
@@ -14,9 +12,6 @@ class user1{
 
          $conn->close();
         return $result;
-
-        
-          
 
     }
 
@@ -28,14 +23,37 @@ class user1{
     }
     public function autheticate(){
 
+
     }
     public function setbio(){
         
     }
-    public static function login(){
-        $sql = "SELECT  username, password FROM signin";
-        $result = mysqli_query(database::$connect, $sql);
-        echo $result;
+    public static function login($user,$pass)
+    {
+        $pass =md5($pass); //hashing password
+        $query =" SELECT * FROM `signin` WHERE `username` = '$user'"; //query to fetch 
+        $conn = database::get_connection();//establish the connection
+        $result=$conn->query($query);
+        if($result->num_rows==1){ //checking the rows
+            //fetching the arrays
+             //checking the hashed password
+                $row=$result->fetch_assoc();
+                if($row['password']==$pass){
+                    return $row;
+
+                }
+                else{
+                    return false;
+                }
+        }
+        else{
+                return false;
+            }
+        }
+
+
+
+    
         
     }
-}
+
