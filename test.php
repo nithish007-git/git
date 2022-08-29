@@ -1,28 +1,34 @@
 <?
-include "libs/load.php";
-$user = "loga";
-$pass="loga";
-$result=null;
-$sql=user1::login($user,$pass);
-if($_GET['logout']){
-    session::destroy();
-}
-if(session::get('is_loggedin',true)){
-    $data=session::get('session_user',true);
-    print("welcome Back"."\n".$user);
-    $result=$data;
+// $servername="mysql.selfmade.ninja";
+// $username="nithish";
+// $password="hackerfeast12";
+// $dbname="nithish_photogram";
 
-}else{
-    print("no sessiona found");
-    $result=user1::login($user,$pass);
+// // Create connection
+// $conn = new mysqli($servername, $username, $password);
 
 
-}
-if($result){
-    echo "login success";
-    session::set('is_loggedin',true);
-    session::set('session_user',$result);
-}
-else{
-    echo "failed";
-}
+// $sql = "SELECT  username, password FROM signin ";
+// $result = $conn->query($sql);
+
+// if ($result->num_rows > 0) {
+//   // output data of each row .
+//   while($row = $result->fetch_assoc()) {
+//     echo  $row["username"]. "<br>";
+//   }
+// } else {
+//   echo "0 results";
+// }
+
+// // Check connection
+// if ($conn->connect_error) {
+//   die("Connection failed: " . $conn->connect_error);
+// }
+// echo " \n Connected successfully";
+include_once "libs/includes/user.class.php";
+$user="log";
+$mic1=new user1($user);
+echo $mic1->getinstagram('log');
+
+
+?>

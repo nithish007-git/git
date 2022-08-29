@@ -19,11 +19,6 @@
 
 <main>
 
-
-
-  
-
-
 </main>
 
 <footer class="text-muted py-5">
