@@ -12,4 +12,4 @@ and we named as photogram .
  - mysql
  
  
- ## I have will be updating more things soon
+ ## I  will be updating more things soon
